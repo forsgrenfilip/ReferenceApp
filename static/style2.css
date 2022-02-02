@@ -1,0 +1,458 @@
+@font-face {
+    font-family: 'aktivGrotisk';
+    src: url(css/fonts/AktivGroteskCorp-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'aktivGrotiskLight';
+    src: url(css/fonts/AktivGroteskCorp-Light.ttf);
+}
+
+
+/* Styling */
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background: url(images/body.png) no-repeat;
+    background-position: 0% 0%;
+    background-size: 100% 500%;
+}
+
+header {
+    margin: 10px 20% 10px 20%;
+    min-width: 550px;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+header ul li {
+    width: 100%;
+}
+
+img.logo {
+    height: auto;
+    width: 70%;
+}
+
+img.headline {
+    margin-left: -30%;
+    height: auto;
+    width: 90%;
+}
+
+.container {
+    margin: 0px 20% 0 20%;
+    min-width: 550px;
+}
+
+fieldset {
+    background-color: #ffffff;
+    border: 2px solid #484848;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #666;
+    padding-top: 10px;
+}
+
+legend {
+    margin-top: -10px;
+    padding: 0.2rem 0.2rem;
+    background: #ffffff;
+    border: 2px solid #484848;
+    border-radius: 0.3rem;
+    font-family: 'aktivGrotiskLight', Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+fieldset>legend {
+    margin-top: -1.9rem;
+}
+
+fieldset>legend+* {
+    clear: both;
+}
+
+h3 {
+    margin: 0.5rem 0.5rem;
+    font-family: 'aktivGrotisk', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: #484848;
+}
+
+form {
+    margin-top: -0.3rem;
+}
+
+span {
+    color: #484848;
+    font-family: 'aktivGrotiskLight', Helvetica, sans-serif;
+}
+
+.radio {
+    font-family: 'aktivGrotiskLight', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    display: block;
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.radio:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.radio input:checked~.checkmark {
+    background-color: #ff8226;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio input:checked~.checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    top: 7px;
+    left: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 80%;
+    background: #484848;
+}
+
+section.range-slider {
+    color: #484848;
+    font-family: 'aktivGrotiskLight', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+section.range-slider input {
+    margin-left: -50%;
+}
+
+ul.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+ul.buttons li {
+    width: 100%;
+}
+
+input[type=submit] {
+    background-color: #ffffff;
+    border: 5px solid #484848;
+    border-radius: 2rem;
+    color: #484848;
+    font-family: 'aktivGrotisk', Helvetica, sans-serif;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #f29655bb;
+}
+
+input[type=button] {
+    background-color: #ffffff;
+    border: 5px solid #484848;
+    border-radius: 2rem;
+    color: #484848;
+    font-family: 'aktivGrotisk', Helvetica, sans-serif;
+    font-size: 1.2rem;
+    padding: 10px 65px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #f29655bb;
+}
+
+form p {
+    color: #484848;
+    font-family: 'aktivGrotiskLight', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    margin: 0.5rem 1rem;
+}
+
+
+/* Combotree */
+
+ :root {
+    --ct-bg: #fff;
+    --ct-btn-hover: #e8e8e8;
+    --ct-btn-active: #ddd;
+    --ct-btn-color: #555;
+    --ct-border-color: #e1e1e1;
+    --ct-border-radius: 5px;
+    --ct-tree-hover: #efefef;
+    --ct-selection: #f29655c4;
+    --ct-padding: 8px;
+}
+
+.comboTreeWrapper {
+    position: relative;
+    text-align: left !important;
+}
+
+.comboTreeInputWrapper {
+    position: relative;
+}
+
+.comboTreeArrowBtn {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    box-sizing: border-box;
+    border: 1px solid var(--ct-border-color);
+    border-radius: 0 var(--ct-border-radius) var(--ct-border-radius) 0;
+    background: var(--ct-border-color);
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+.comboTreeArrowBtn:hover {
+    background: var(--ct-btn-hover);
+}
+
+.comboTreeArrowBtn:active {
+    background: var(--ct-btn-active);
+}
+
+.comboTreeInputBox:focus+.comboTreeArrowBtn {
+    color: var(--ct-btn-color);
+    border-top: 1px solid var(--ct-selection);
+    border-right: 1px solid var(--ct-selection);
+    border-bottom: 1px solid var(--ct-selection);
+}
+
+.comboTreeArrowBtnImg {
+    font-size: 1.25rem;
+}
+
+.comboTreeDropDownContainer {
+    display: none;
+    background: var(--ct-bg);
+    border: 1px solid var(--ct-border-color);
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 999;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.comboTreeDropDownContainer ul {
+    padding: 0px;
+    margin: 0;
+}
+
+.comboTreeDropDownContainer li {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+.comboTreeDropDownContainer li .selectable {
+    cursor: pointer;
+}
+
+.comboTreeDropDownContainer li .not-selectable {
+    cursor: not-allowed;
+}
+
+.comboTreeDropDownContainer li:hover {
+    background-color: var(--ct-tree-hover);
+}
+
+.comboTreeDropDownContainer li:hover ul {
+    background-color: var(--ct-bg)
+}
+
+.comboTreeDropDownContainer li span.comboTreeItemTitle.comboTreeItemHover {
+    background-color: var(--ct-selection);
+    color: var(--ct-bg);
+    border-radius: 2px;
+}
+
+span.comboTreeItemTitle {
+    display: block;
+    padding: 3px var(--ct-padding);
+}
+
+.comboTreeDropDownContainer label {
+    cursor: pointer;
+    width: 100%;
+    display: block;
+}
+
+.comboTreeDropDownContainer .comboTreeItemTitle input {
+    position: relative;
+    top: 2px;
+    margin: 0px 4px 0px 0px;
+}
+
+.comboTreeParentPlus {
+    position: relative;
+    left: -12px;
+    top: 4px;
+    width: 4px;
+    float: left;
+    cursor: pointer;
+}
+
+.comboTreeInputBox {
+    padding: var(--ct-padding);
+    border-radius: var(--ct-border-radius);
+    border: 1px solid var(--ct-border-color);
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 24px;
+}
+
+.comboTreeInputBox:focus {
+    border: 1px solid var(--ct-selection);
+    outline-width: 0;
+}
+
+.multiplesFilter {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--ct-border-color);
+}
+
+.range-slider {
+    position: relative;
+    width: 100%;
+}
+
+.slider {
+    position: relative;
+    z-index: 1;
+    height: 10px;
+    margin: 15px 15px;
+}
+
+.slider>.track {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: #fab686;
+}
+
+.slider>.range {
+    position: absolute;
+    z-index: 2;
+    left: 25%;
+    right: 25%;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: #ff8226;
+}
+
+.slider>.thumb {
+    position: absolute;
+    z-index: 3;
+    width: 20px;
+    height: 20px;
+    background-color: #484848;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 #f29655;
+    transition: box-shadow .3s ease-in-out;
+}
+
+.slider>.thumb.left {
+    left: 25%;
+    transform: translate(-15px, -5px);
+}
+
+.slider>.thumb.right {
+    right: 25%;
+    transform: translate(15px, -5px);
+}
+
+.slider>.thumb.hover {
+    box-shadow: 0 0 0 5px rgba(242, 161, 86, 0.57);
+}
+
+.slider>.thumb.active {
+    box-shadow: 0 0 0 10px rgba(242, 161, 86, 0.527);
+}
+
+input[type=range] {
+    position: absolute;
+    pointer-events: none;
+    -webkit-appearance: none;
+    z-index: 2;
+    height: 10px;
+    width: 100%;
+    opacity: 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 30px;
+    height: 30px;
+    border-radius: 0;
+    border: 0 none;
+    background-color: red;
+    -webkit-appearance: none;
+}
+
+.youtube-link {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+}
