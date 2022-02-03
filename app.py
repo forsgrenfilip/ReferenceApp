@@ -28,7 +28,6 @@ def index():
         return render_template('AliRef.html', content=content)
     else:
         return render_template('AliRef.html')
-
 if __name__ == '__main__':
     app.run(debug=True)
 
