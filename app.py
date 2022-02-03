@@ -5,7 +5,6 @@ from getTable import getTable
 from getTablePage import getTablePage
 from merge import mergePages
 from getDataCSV import getDataCSV
-from esesesnx import go
 
 app=Flask(__name__,template_folder='template')
 # The first page the user will see
